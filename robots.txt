@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://jnk234.github.io/sitemap.xml
+Sitemap: https://jnk234.github.io/jnkarthik-portfolio//sitemap.xml
