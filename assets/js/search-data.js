@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/books/";
           },
-        },{id: "post-my-three-months-at-relativity-building-ai-for-legal-tech",
+        },{id: "post-model-free-rl-prediction-control-and-the-mrp-mdp-duality",
+        
+          title: 'Model Free RL: Prediction, Control, and the MRP-MDP Duality <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "Breaking down the MRP-MDP relationship and why solving for value (prediction) is the necessary first step to finding an optimal policy (control).",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://neuraforge.substack.com/p/model-free-rl-prediction-control", "_blank");
+          
+        },
+      },{id: "post-my-three-months-at-relativity-building-ai-for-legal-tech",
         
           title: "My Three Months at Relativity: Building AI for Legal Tech",
         
@@ -273,17 +284,6 @@ ninja.data = [{
         handler: () => {
           
             window.open("https://neuraforge.substack.com/p/prompt-engineering-demystified-understanding", "_blank");
-          
-        },
-      },{id: "post-attention-is-all-you-need-understanding-the-transformer-39-s-attention-mechanism",
-        
-          title: 'Attention Is All You Need: Understanding the Transformer&#39;s Attention Mechanism <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-        
-        description: "#3 Generative AI with LLMs: Understanding the Transformer Architecture - II",
-        section: "Posts",
-        handler: () => {
-          
-            window.open("https://neuraforge.substack.com/p/attention-is-all-you-need-understanding", "_blank");
           
         },
       },{id: "post-here-s-how-you-should-train-an-intelligent-classifier-model",
