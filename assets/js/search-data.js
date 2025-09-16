@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/books/";
           },
-        },{id: "post-monte-carlo-learning-in-rl",
+        },{id: "post-temporal-difference-bootstrapping-in-reinforcement-learning",
+        
+          title: "Temporal Difference: Bootstrapping in Reinforcement Learning",
+        
+        description: "Understanding differences between TD Learning and MC Learning in RL",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/td-learning-in-rl/";
+          
+        },
+      },{id: "post-monte-carlo-learning-in-rl",
         
           title: "Monte Carlo Learning in RL",
         
