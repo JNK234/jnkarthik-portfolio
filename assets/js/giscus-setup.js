@@ -19,9 +19,9 @@ function determineGiscusTheme() {
   let giscusAttributes = {
     src: "https://giscus.app/client.js",
     "data-repo": "JNK234/JNK234.github.io",
-    "data-repo-id": "R_kgDONgJNKA",
-    "data-category": "Comments",
-    "data-category-id": "DIC_kwDONgJNKM4CkxOo",
+    "data-repo-id": "R_kgDOPmMqIQ",
+    "data-category": "Announcements",
+    "data-category-id": "DIC_kwDOPmMqIc4CvhuN",
     "data-mapping": "title",
     "data-strict": "1",
     "data-reactions-enabled": "1",
