@@ -2,15 +2,13 @@
 layout: post
 title: "A Deep Dive into On-Policy TD Control: The SARSA Algorithm"
 date: 2025-09-18 03:34:43+05:30
-description: "Brief description of your post (update this)"
+description: "How on-policy learning makes agents cautious by design."
 tags: [Reinforcement Learning]
 categories: [technical]
 giscus_comments: true
 related_posts: false
 featured: false
 ---
-
-# A Deep Dive into On-Policy TD Control: The SARSA Algorithm
 
 ## Introduction
 
