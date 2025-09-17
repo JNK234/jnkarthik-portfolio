@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/books/";
           },
-        },{id: "post-temporal-difference-bootstrapping-in-reinforcement-learning",
+        },{id: "post-a-deep-dive-into-on-policy-td-control-the-sarsa-algorithm",
+        
+          title: "A Deep Dive into On-Policy TD Control: The SARSA Algorithm",
+        
+        description: "Brief description of your post (update this)",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/deep-dive-into-on-policy-td-learning-algorithm-sarsa/";
+          
+        },
+      },{id: "post-temporal-difference-bootstrapping-in-reinforcement-learning",
         
           title: "Temporal Difference: Bootstrapping in Reinforcement Learning",
         
