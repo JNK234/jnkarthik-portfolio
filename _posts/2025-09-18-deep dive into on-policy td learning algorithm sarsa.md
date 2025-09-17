@@ -18,7 +18,7 @@ How does a reinforcement learning agent learn to make optimal decisions by evalu
 
 ### The Limitation of State-Value Functions in Model-Free Settings
 
-In model-based reinforcement learning, the state-value function, $V(s)$, quantifies the expected future reward from a state _s_. If the environment's dynamics—the transition probabilities $P(s'|s,a)$—are known, an agent can perform a one-step lookahead to find an optimal policy. It calculates the expected value of resulting states for each action and chooses the best one.
+In model-based reinforcement learning, the state-value function, **V(s)**, quantifies the expected future reward from a state _s_. If the environment's dynamics—the transition probabilities **P(s'|s,a)**—are known, an agent can perform a one-step lookahead to find an optimal policy. It calculates the expected value of resulting states for each action and chooses the best one.
 
 However, in model-free scenarios, the agent lacks these transition probabilities. The state-value function becomes powerless for action selection. Knowing a state _s'_ is valuable is useless if the agent doesn't know which action leads there. $V(s)$ tells us the "goodness" of a location but provides no map for how to navigate from it.
 
