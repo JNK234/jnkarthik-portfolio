@@ -48,7 +48,7 @@ ninja.data = [{
         
           title: "A Deep Dive into On-Policy TD Control: The SARSA Algorithm",
         
-        description: "Brief description of your post (update this)",
+        description: "How on-policy learning makes agents cautious by design.",
         section: "Posts",
         handler: () => {
           
