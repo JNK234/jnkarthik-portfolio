@@ -96,7 +96,18 @@ module ExternalPosts
         end
         
         if feed.entries.nil? || feed.entries.empty?
-          puts "  No entries found in #{src['name']} RSS feed"
+          puts "  No entries found in #{src['name']} RSS feed via Feedjira"
+          puts "  Attempting manual XML parsing as fallback..."
+          begin
+            doc = Nokogiri::XML(xml)
+            if doc.xpath('//item').any? || doc.xpath('//entry').any?
+              process_manual_rss(site, src, doc)
+            else
+              puts "  No items/entries found in manual XML parsing"
+            end
+          rescue StandardError => manual_error
+            puts "  Manual parsing also failed: #{manual_error.message}"
+          end
           return
         end
         
@@ -109,22 +120,32 @@ module ExternalPosts
     end
 
     def process_manual_rss(site, src, doc)
-      doc.xpath('//item').each do |item|
+      # Support both RSS 2.0 (<item>) and Atom (<entry>) formats
+      nodes = doc.xpath('//item')
+      nodes = doc.xpath('//entry') if nodes.empty?
+      nodes.each do |item|
         begin
-          title = item.xpath('.//title').text.strip
-          link = item.xpath('.//link').text.strip
-          description = item.xpath('.//description').text.strip
-          content = item.xpath('.//content:encoded').text.strip
-          pub_date_str = item.xpath('.//pubDate').text.strip
+          title = item.at_xpath('./title')&.text&.strip.to_s
+          # Atom uses <link href="...">; RSS uses <link>text</link>
+          link_el = item.at_xpath('./link')
+          link = link_el ? (link_el['href'] || link_el.text).to_s.strip : ''
+          description = item.at_xpath('./description')&.text&.strip
+          description ||= item.at_xpath('./summary')&.text&.strip
+          # Prefer full HTML content if present
+          content = item.at_xpath('.//content:encoded')&.text&.strip
+          content ||= item.at_xpath('./content')&.text&.strip
+          pub_date_str = item.at_xpath('./pubDate')&.text&.strip
+          pub_date_str ||= item.at_xpath('./updated')&.text&.strip
+          pub_date_str ||= item.at_xpath('./published')&.text&.strip
           
           # Parse the publication date
           pub_date = Time.parse(pub_date_str).utc rescue Time.now.utc
           
           puts "  ...processing manual entry: #{title}"
           create_document(site, src['name'], link, {
-            title: title,
-            content: content.empty? ? description : content,
-            summary: description,
+            title: title.empty? ? src['name'] : title,
+            content: (content && !content.empty?) ? content : (description || ''),
+            summary: description || '',
             published: pub_date
           })
         rescue StandardError => error

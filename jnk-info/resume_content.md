@@ -28,7 +28,7 @@ Applied Science Intern | June 2025 - Aug 2025
 
 **1. Led cross-functional initiative with Product, UX, and Engineering** through 10+ customer interviews to define 6 AI-powered insights (title, summary, structured summary, doc type, red flags, quality score), transforming manual document review into automated triage with 60% time reduction.
 
-**2. Built insights extraction pipeline via systematic prompt engineering** (3 iterations, MLFlow tracking) with LLM-as-Judge validation achieving 87.5% accuracy, eliminating 100% hallucinations through structured outputs, and processing 46,864 legal documents.
+**2. Built insights extraction pipeline via systematic prompt engineering** (3 iterations, MLFlow tracking) with LLM-as-Judge validation, eliminating 100% hallucinations through structured outputs, and processing 46,864 legal documents.
 
 **3. Created 600+ document benchmark dataset** combining real legal corpus (200 samples) with synthetic generation (400+ documents), improving model coverage from 60% to 95% for underrepresented categories (Governance: 0.5% → 10%).
 
