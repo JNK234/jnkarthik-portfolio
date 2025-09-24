@@ -186,14 +186,24 @@ jobs:
         run: |
           git config --global user.name 'RSS Feed Bot'
           git config --global user.email 'actions@github.com'
-          
+
           # Add any new or changed feed files
           git add _data/*_feed.xml
-          
+
           # Check if there are any changes to commit
           if git diff --staged --quiet; then
             echo "No changes to RSS feeds."
+            echo "feeds_updated=false" >> $GITHUB_ENV
           else
             git commit -m "Update RSS feeds $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
             git push
+            echo "feeds_updated=true" >> $GITHUB_ENV
           fi
+
+      - name: Trigger site deployment
+        if: env.feeds_updated == 'true'
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          event-type: rss-feeds-updated
+          client-payload: '{"timestamp": "${{ github.run_id }}"}'

@@ -1,6 +1,8 @@
 name: Deploy site
 
 on:
+  repository_dispatch:
+    types: [rss-feeds-updated]
   push:
     branches:
       - master
@@ -9,6 +11,7 @@ on:
       - "assets/**"
       - "_sass/**"
       - "_scripts/**"
+      - "_data/**"
       - "**.bib"
       - "**.html"
       - "**.js"
