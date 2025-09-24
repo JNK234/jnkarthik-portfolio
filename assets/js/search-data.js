@@ -44,7 +44,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/books/";
           },
-        },{id: "post-a-deep-dive-into-on-policy-td-control-the-sarsa-algorithm",
+        },{id: "post-the-deadly-triad-in-reinforcement-learning-why-agents-fail-and-how-dqn-fixed-it",
+        
+          title: 'The Deadly Triad in Reinforcement Learning: Why Agents Fail and How DQN Fixed... <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "A deep dive into function approximation, bootstrapping, and off-policy learning.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://neuraforge.substack.com/p/the-deadly-triad-in-reinforcement", "_blank");
+          
+        },
+      },{id: "post-a-deep-dive-into-q-learning-the-off-policy-td-control-algorithm",
+        
+          title: 'A Deep Dive into Q-Learning: The Off-Policy TD Control Algorithm <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "How Q-Learning Works: From Off-Policy Foundations to Update Rules, SARSA Comparison, and Real-World Insights",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://neuraforge.substack.com/p/a-deep-dive-into-q-learning", "_blank");
+          
+        },
+      },{id: "post-a-deep-dive-into-on-policy-td-control-the-sarsa-algorithm",
         
           title: "A Deep Dive into On-Policy TD Control: The SARSA Algorithm",
         
@@ -295,28 +317,6 @@ ninja.data = [{
         handler: () => {
           
             window.open("https://neuraforge.substack.com/p/demystifying-llm-training-investigating", "_blank");
-          
-        },
-      },{id: "post-diving-into-llm-training-your-guide-to-effective-pre-training",
-        
-          title: 'Diving into LLM Training: Your Guide to Effective Pre-training <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-        
-        description: "#5 Generative AI with LLMs: Exploring LLM Modelling with Pre-training.",
-        section: "Posts",
-        handler: () => {
-          
-            window.open("https://neuraforge.substack.com/p/diving-into-llm-training-your-guide", "_blank");
-          
-        },
-      },{id: "post-prompt-engineering-demystified-understanding-llm-inference",
-        
-          title: 'Prompt Engineering Demystified: Understanding LLM Inference <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-        
-        description: "#4 Generative AI with LLMs: Understanding LLM Inference - I",
-        section: "Posts",
-        handler: () => {
-          
-            window.open("https://neuraforge.substack.com/p/prompt-engineering-demystified-understanding", "_blank");
           
         },
       },{id: "post-here-s-how-you-should-train-an-intelligent-classifier-model",
