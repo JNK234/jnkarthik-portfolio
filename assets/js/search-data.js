@@ -407,7 +407,7 @@ ninja.data = [{
               window.location.href = "/projects/4_project/";
             },},{id: "projects-agentic-blogging-assistant",
           title: 'Agentic Blogging Assistant',
-          description: "AI-powered tool for streamlined blog creation with multi-LLM support and SEO optimization",
+          description: "Hierarchical agent-based content transformation platform with LangGraph orchestration, ChromaDB semantic search, and multi-LLM provider integration",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
             },},{id: "projects-faceswap-diffusion-model",
