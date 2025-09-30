@@ -2,16 +2,17 @@
 layout: about
 title: about
 permalink: /
-subtitle: Positions Open for - Applied Scientist | Machine Learning Engineer | Applied Machine Learning Engineer | Aspiring Research Scientist
+subtitle: >
+  <p>Research Engineer, AI Systems</p>
+  <p>MS in Artificial Intelligence • Northwestern University</p>
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>MS in Artificial Intelligence</p>
-    <p>Northwestern University</p>
     <p>Chicago, IL</p>
+    <p>Available Dec 2025</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -27,22 +28,26 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Welcome! I'm **Narasimha Karthik Jwalapuram**, an AI/ML Engineer and Data Scientist currently pursuing my Master's in Artificial Intelligence at Northwestern University.
+I build agents and train LLMs for production systems. Currently at **Relativity**, I led cross-functional teams to automate legal document processing for 46K+ documents, achieving 87.5% accuracy through systematic prompt engineering and tiered LLM architectures.
 
-I specialize in Large Language Models (LLMs), Natural Language Processing, and building scalable AI systems. With experience at Relativity, Boeing, and current research work at Northwestern's CCL Lab, I focus on developing innovative AI solutions for real-world problems.
+At **CCL Lab (Northwestern)**, I'm developing genetic programming frameworks that evolve code generation capabilities using state-of-the-art LLMs (Grok, Claude, DeepSeek) with LangGraph orchestration for multi-agent verification systems.
 
-At **Relativity**, I led cross-functional AI initiatives to automate legal document review processes, building an insights extraction pipeline that processed 46,864+ legal documents with 87.5% accuracy and achieved a 60% reduction in review time. Currently at **CCL Lab**, I'm developing genetic programming frameworks with state-of-the-art LLMs including Grok, Claude, and DeepSeek models for automated code generation.
+Previously at **Boeing**, I secured $200k funding by building RAG systems that reduced Aircraft Maintenance Manual authoring effort by 80%. Fine-tuned GPT-2 and Llama models on 2,000+ technical documents using PEFT techniques on 4x A100 GPUs.
 
-## Research Interests
-- **LLM Training & Fine-tuning**: GPT-2, Llama, and custom architectures
-- **Reinforcement Learning**: Optimization and decision-making systems  
-- **Agentic AI**: LangChain and LangGraph frameworks
+## Technical Approach
 
-## Recent Work
-- **Relativity**: Led cross-functional AI initiative reducing document review time by 60% through automated legal document processing
-- **CCL Lab**: Developing genetic programming frameworks with LLMs (Grok, Claude, DeepSeek) for code generation and verification systems
-- **Boeing**: Secured $200k funding for AI-driven automation and developed RAG systems reducing manual effort by 80%
+**Legal Document Intelligence** (Relativity)
+Built insights extraction pipeline processing contracts, depositions, and discovery documents. Eliminated hallucinations through structured outputs and LLM-as-Judge validation. Created 600+ document benchmark combining real corpus with synthetic generation, improving coverage for rare categories from 0.5% to 10%.
 
-**Technical Stack**: Python, PyTorch, LangChain, ChromaDB, FastAPI
+**Autonomous Code Evolution** (CCL Lab)
+Architecting hierarchical agent systems where LLMs generate, test, and evolve agent-based models through genetic programming. Implementing verification layers that evaluate correctness and performance of LLM-generated code against NetLogo benchmarks.
 
-Feel free to connect on [LinkedIn](https://www.linkedin.com/in/narasimhakarthik/) or check out my [newsletter](https://neuraforge.substack.com)!
+**Domain-Specific LLM Fine-tuning** (Boeing)
+Tackled the challenge of adapting general LLMs to aerospace technical writing. Built custom PDF-to-Markdown parser for 2,000+ AMM documents when standard parsers failed. Multi-stage instruction fine-tuning using alpaca format achieved 80% generation accuracy for technical authoring.
+
+## Stack
+Python • PyTorch • LangChain/LangGraph • ChromaDB • FastAPI • Transformers • PEFT/LoRA
+
+Recent work: [Agentic Blogging Assistant](https://github.com/JNK234/Agentic-Blogging-Assistant) (HyDE RAG with multi-LLM orchestration)
+
+Connect: [LinkedIn](https://www.linkedin.com/in/narasimhakarthik/) • [Newsletter](https://neuraforge.substack.com)
