@@ -141,7 +141,22 @@
     }
   ],
   "certificates": [],
-  "publications": [],
+  "publications": [
+    {
+      "name": "QD-LEAR: Exploring Quality-Diversity Tradeoffs in LLM-Evolved Agent Rule Representations",
+      "publisher": "MIT Press",
+      "releaseDate": "2025-07-01",
+      "url": "",
+      "summary": "Accepted as poster presentation at the 2025 Conference on Artificial Life (ALife 2025) in Kyoto, Japan. Research exploring quality-diversity tradeoffs in Large Language Model-evolved agent rule representations."
+    },
+    {
+      "name": "LEAR: LLM-Driven Evolution of Agent-Based Rules",
+      "publisher": "Association for Computing Machinery",
+      "releaseDate": "2025-07-14",
+      "url": "https://doi.org/10.1145/3712255.3734368",
+      "summary": "Research on using Large Language Models to drive the evolution of agent-based rules in computational modeling systems. Published in GECCO '25 Companion proceedings."
+    }
+  ],
   "skills": [
     {
       "name": "Programming Languages",

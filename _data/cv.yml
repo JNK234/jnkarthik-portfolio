@@ -150,6 +150,8 @@
 - title: Publications & Writing
   type: list
   contents:
+    - <b>QD-LEAR - Exploring Quality-Diversity Tradeoffs in LLM-Evolved Agent Rule Representations</b> (ALife 2025) - Accepted as poster presentation at the 2025 Conference on Artificial Life in Kyoto, Japan
+    - <b>LEAR - LLM-Driven Evolution of Agent-Based Rules</b> (GECCO '25) - Research on using Large Language Models to drive evolution of agent-based rules in computational modeling systems
     - <b>NeuraForge Newsletter</b> - Publishing content on Generative AI and Machine Learning trends (Aug 2023 - Present)
     - Technical blog posts on LLMs, RAG systems, and AI applications
 

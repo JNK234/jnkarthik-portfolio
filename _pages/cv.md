@@ -4,7 +4,7 @@ permalink: /cv/
 title: cv
 nav: true
 nav_order: 4
-cv_pdf: resume.pdf
+cv_pdf: Narasimha_Karthik_Resume.pdf
 description: My comprehensive curriculum vitae highlighting my experience in AI/ML, research work, and technical achievements.
 ---
 
