@@ -420,6 +420,16 @@ ninja.data = [{
           description: "Extending NetLogo with Large Language Model capabilities for intelligent agent-based modeling",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
+            },},{id: "projects-nlp-interpretability-mechanistic-analysis-of-llms",
+          title: 'NLP Interpretability - Mechanistic Analysis of LLMs',
+          description: "Research exploring how large language models process financial statements for earnings prediction through mechanistic interpretability techniques",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/8_project/";
+            },},{id: "projects-self-evolving-agent",
+          title: 'Self-Evolving Agent',
+          description: "LLM-based self-improving agent system with automatic prompt evolution and dynamic tool creation",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/9_project/";
             },},{
         id: 'social-email',
         title: 'email',
