@@ -11,7 +11,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Chicago, IL</p>
+    <p>San Francisco, CA</p>
     <p>Available Dec 2025</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -28,26 +28,16 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I build agents and train LLMs for production systems. Currently at **Relativity**, I led cross-functional teams to automate legal document processing for 46K+ documents, achieving 87.5% accuracy through systematic prompt engineering and tiered LLM architectures.
+I build AI systems that solve real problems. Currently at **Relativity**, I automate legal document processing for 46K+ documents with 87.5% accuracy.
 
-At **CCL Lab (Northwestern)**, I'm developing genetic programming frameworks that evolve code generation capabilities using state-of-the-art LLMs (Grok, Claude, DeepSeek) with LangGraph orchestration for multi-agent verification systems.
+At **CCL Lab (Northwestern)**, I research genetic programming with LLMs to evolve code generation capabilities.
 
-Previously at **Boeing**, I secured $200k funding by building RAG systems that reduced Aircraft Maintenance Manual authoring effort by 80%. Fine-tuned GPT-2 and Llama models on 2,000+ technical documents using PEFT techniques on 4x A100 GPUs.
+Previously at **Boeing**, I built RAG systems that reduced technical documentation effort by 80% and secured $200k funding.
 
-## Technical Approach
+**Focus**: LLM training, agent systems, production AI
 
-**Legal Document Intelligence** (Relativity)
-Built insights extraction pipeline processing contracts, depositions, and discovery documents. Eliminated hallucinations through structured outputs and LLM-as-Judge validation. Created 600+ document benchmark combining real corpus with synthetic generation, improving coverage for rare categories from 0.5% to 10%.
+**Stack**: Python • PyTorch • LangChain/LangGraph • Transformers
 
-**Autonomous Code Evolution** (CCL Lab)
-Architecting hierarchical agent systems where LLMs generate, test, and evolve agent-based models through genetic programming. Implementing verification layers that evaluate correctness and performance of LLM-generated code against NetLogo benchmarks.
-
-**Domain-Specific LLM Fine-tuning** (Boeing)
-Tackled the challenge of adapting general LLMs to aerospace technical writing. Built custom PDF-to-Markdown parser for 2,000+ AMM documents when standard parsers failed. Multi-stage instruction fine-tuning using alpaca format achieved 80% generation accuracy for technical authoring.
-
-## Stack
-Python • PyTorch • LangChain/LangGraph • ChromaDB • FastAPI • Transformers • PEFT/LoRA
-
-Recent work: [Agentic Blogging Assistant](https://github.com/JNK234/Agentic-Blogging-Assistant) (HyDE RAG with multi-LLM orchestration)
+Recent: [Agentic Blogging Assistant](https://github.com/JNK234/Agentic-Blogging-Assistant)
 
 Connect: [LinkedIn](https://www.linkedin.com/in/narasimhakarthik/) • [Newsletter](https://neuraforge.substack.com)
