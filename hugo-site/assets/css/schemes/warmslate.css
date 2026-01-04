@@ -1,0 +1,44 @@
+/* ABOUTME: Warm Slate color scheme for Hugo Congo theme */
+/* ABOUTME: Professional academic dark theme with warm gray tones and amber/gold accents */
+
+:root {
+  /* Neutral colors - warm grays for dark theme (light text on dark bg) */
+  --color-neutral: 232, 230, 227;           /* #e8e6e3 - Text color (light) */
+  --color-neutral-50: 250, 249, 247;        /* #faf9f7 - Lightest text */
+  --color-neutral-100: 245, 243, 239;       /* #f5f3ef - Primary text */
+  --color-neutral-200: 232, 229, 223;       /* #e8e5df */
+  --color-neutral-300: 214, 209, 200;       /* #d6d1c8 - Secondary text */
+  --color-neutral-400: 163, 157, 145;       /* #a39d91 */
+  --color-neutral-500: 115, 109, 97;        /* #736d61 */
+  --color-neutral-600: 84, 79, 70;          /* #544f46 */
+  --color-neutral-700: 62, 58, 52;          /* #3e3a34 - Card background */
+  --color-neutral-800: 38, 36, 32;          /* #262420 */
+  --color-neutral-900: 24, 23, 21;          /* #181715 - Main background */
+  --color-neutral-950: 18, 17, 16;          /* #121110 - Darkest */
+
+  /* Primary accent - Warm Amber/Gold */
+  --color-primary-50: 254, 252, 248;        /* #fefcf8 */
+  --color-primary-100: 253, 247, 237;       /* #fdf7ed */
+  --color-primary-200: 251, 236, 214;       /* #fbecd6 */
+  --color-primary-300: 247, 219, 179;       /* #f7dbb3 */
+  --color-primary-400: 239, 194, 133;       /* #efc285 - Hover accent */
+  --color-primary-500: 212, 165, 116;       /* #d4a574 - Primary accent */
+  --color-primary-600: 180, 137, 91;        /* #b4895b */
+  --color-primary-700: 146, 108, 69;        /* #926c45 */
+  --color-primary-800: 110, 79, 48;         /* #6e4f30 */
+  --color-primary-900: 75, 52, 30;          /* #4b341e */
+  --color-primary-950: 45, 32, 19;          /* #2d2013 */
+
+  /* Secondary accent - Warm Slate (supporting colors) */
+  --color-secondary-50: 251, 249, 246;      /* #fbf9f6 */
+  --color-secondary-100: 246, 242, 236;     /* #f6f2ec */
+  --color-secondary-200: 233, 226, 216;     /* #e9e2d8 */
+  --color-secondary-300: 213, 202, 186;     /* #d5caba */
+  --color-secondary-400: 176, 159, 138;     /* #b09f8a */
+  --color-secondary-500: 139, 119, 97;      /* #8b7761 */
+  --color-secondary-600: 107, 89, 70;       /* #6b5946 */
+  --color-secondary-700: 79, 66, 52;        /* #4f4234 */
+  --color-secondary-800: 48, 42, 35;        /* #302a23 */
+  --color-secondary-900: 28, 25, 22;        /* #1c1916 */
+  --color-secondary-950: 15, 14, 12;        /* #0f0e0c */
+}

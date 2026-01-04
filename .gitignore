@@ -12,3 +12,8 @@ node_modules/
 vendor
 .idea
 .claude/
+
+# Hugo generated files
+hugo-site/public/
+hugo-site/resources/
+hugo-site/.hugo_build.lock

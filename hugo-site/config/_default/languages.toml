@@ -1,0 +1,19 @@
+# ABOUTME: Language configuration for Hugo site
+# ABOUTME: Sets English as default with author info
+
+[en]
+  languageName = "English"
+  weight = 1
+  title = "Narasimha Karthik J"
+
+  [en.params.author]
+    name = "Narasimha Karthik J"
+    image = "img/profile.jpg"
+    headline = "Research Engineer, AI Systems"
+    bio = "I build AI systems that work in the real world."
+    links = [
+      { linkedin = "https://www.linkedin.com/in/narasimhakarthik" },
+      { github = "https://github.com/JNK234" },
+      { scholar = "https://scholar.google.com/citations?user=l5NzskUAAAAJ" },
+      { substack = "https://neuraforge.substack.com" },
+    ]

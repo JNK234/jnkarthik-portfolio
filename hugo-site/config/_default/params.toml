@@ -1,0 +1,100 @@
+# ABOUTME: Hugo Congo theme parameters
+# ABOUTME: Controls appearance, layout, and feature settings
+
+# Color scheme - using custom warm slate
+colorScheme = "warmslate"
+defaultAppearance = "dark"
+autoSwitchAppearance = false
+
+# Global settings
+enableSearch = true
+enableCodeCopy = true
+enableImageLazyLoading = true
+enableImageWebp = true
+
+# Math rendering with KaTeX
+[math]
+  katex = true
+
+# Header
+[header]
+  layout = "basic"
+  logo = false
+  showTitle = true
+
+# Homepage
+[homepage]
+  layout = "profile"
+  homepageImage = "profile.jpg"
+  showRecent = false
+  showRecentItems = 0
+  showMoreLink = false
+  showMoreLinkDest = "/posts"
+  cardView = false
+  cardViewScreenWidth = false
+  layoutBackgroundBlur = false
+  recentSections = ["posts"]
+
+# Article
+[article]
+  showDate = true
+  showViews = false
+  showLikes = false
+  showDateUpdated = false
+  showAuthor = false
+  showHero = false
+  showBreadcrumbs = true
+  showDraftLabel = true
+  showEdit = false
+  showHeadingAnchors = true
+  showPagination = true
+  invertPagination = false
+  showReadingTime = true
+  showTableOfContents = true
+  showRelatedContent = false
+  showTaxonomies = true
+  showAuthorsBadges = false
+  showWordCount = false
+  sharingLinks = ["linkedin", "twitter", "email"]
+
+# List
+[list]
+  showHero = false
+  showBreadcrumbs = false
+  showSummary = true
+  showViews = false
+  showLikes = false
+  showTableOfContents = false
+  showCards = false
+  groupByYear = true
+  cardView = false
+  cardViewScreenWidth = false
+
+# Taxonomy
+[taxonomy]
+  showTermCount = true
+  showHero = false
+  showBreadcrumbs = false
+  showViews = false
+  showLikes = false
+  showTableOfContents = false
+  cardView = false
+
+# Term
+[term]
+  showHero = false
+  showBreadcrumbs = false
+  showViews = false
+  showLikes = false
+  showTableOfContents = false
+  groupByYear = false
+  cardView = false
+  cardViewScreenWidth = false
+
+# Footer - minimal
+[footer]
+  showMenu = false
+  showCopyright = true
+  showThemeAttribution = false
+  showAppearanceSwitcher = true
+  showScrollToTop = true

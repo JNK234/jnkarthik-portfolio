@@ -1,0 +1,27 @@
+# ABOUTME: Navigation menu configuration
+# ABOUTME: Defines main site navigation items
+
+[[main]]
+  name = "About"
+  pageRef = "/"
+  weight = 10
+
+[[main]]
+  name = "Blog"
+  pageRef = "posts"
+  weight = 20
+
+[[main]]
+  name = "Projects"
+  pageRef = "projects"
+  weight = 30
+
+[[main]]
+  name = "Publications"
+  pageRef = "publications"
+  weight = 40
+
+[[main]]
+  name = "CV"
+  pageRef = "cv"
+  weight = 50

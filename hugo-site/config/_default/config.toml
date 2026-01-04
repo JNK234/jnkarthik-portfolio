@@ -1,0 +1,40 @@
+# ABOUTME: Main Hugo configuration file for the portfolio site
+# ABOUTME: Configures site basics, theme, and build settings
+
+theme = "congo"
+# baseURL is set dynamically by GitHub Actions during deployment
+# For local development, use: hugo server --baseURL http://localhost:1313/
+baseURL = "/"
+languageCode = "en"
+title = "Narasimha Karthik J"
+defaultContentLanguage = "en"
+
+enableRobotsTXT = true
+[pagination]
+  pagerSize = 10
+summaryLength = 30
+
+# Main sections for recent articles
+mainSections = ["posts"]
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[permalinks]
+  [permalinks.page]
+    posts = "/posts/:slug/"
+    projects = "/projects/:slug/"
+  [permalinks.section]
+    posts = "/posts/"
+    projects = "/projects/"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
