@@ -25,7 +25,7 @@
     </div>
   </section>
 
-  {{/* Local Posts Section */}}
+  {{/* All Posts - Unified List (Internal + External) */}}
   {{ if .Data.Pages }}
     <section>
       {{ if $.Params.groupByYear | default ($.Site.Params.list.groupByYear | default true) }}
@@ -45,52 +45,6 @@
       {{ end }}
     </section>
     {{ partial "pagination.html" . }}
-  {{ end }}
-
-  {{/* External Posts Section - NeuraForge (Substack) */}}
-  {{ with .Site.Data.external_posts.substack }}
-    <section>
-      <h2 class="mt-12 text-2xl font-bold text-neutral-700 dark:text-neutral-300">
-        NeuraForge Newsletter
-      </h2>
-      <hr class="w-36 border-dotted border-neutral-400" />
-      {{ range . }}
-        <article class="my-4">
-          <a href="{{ .url }}" target="_blank" rel="noopener" class="group flex items-start gap-2 text-neutral-800 decoration-neutral-400 hover:underline dark:text-neutral">
-            <span class="flex-1">
-              <span class="font-semibold group-hover:text-primary-600 dark:group-hover:text-primary-400">{{ .title }}</span>
-              {{ if .date }}
-                <span class="text-sm text-neutral-500 dark:text-neutral-400"> · {{ .date }}</span>
-              {{ end }}
-              <span class="text-xs text-neutral-400 dark:text-neutral-500 ml-2">↗</span>
-            </span>
-          </a>
-        </article>
-      {{ end }}
-    </section>
-  {{ end }}
-
-  {{/* External Posts Section - Medium */}}
-  {{ with .Site.Data.external_posts.medium }}
-    <section>
-      <h2 class="mt-12 text-2xl font-bold text-neutral-700 dark:text-neutral-300">
-        Medium
-      </h2>
-      <hr class="w-36 border-dotted border-neutral-400" />
-      {{ range . }}
-        <article class="my-4">
-          <a href="{{ .url }}" target="_blank" rel="noopener" class="group flex items-start gap-2 text-neutral-800 decoration-neutral-400 hover:underline dark:text-neutral">
-            <span class="flex-1">
-              <span class="font-semibold group-hover:text-primary-600 dark:group-hover:text-primary-400">{{ .title }}</span>
-              {{ if .date }}
-                <span class="text-sm text-neutral-500 dark:text-neutral-400"> · {{ .date }}</span>
-              {{ end }}
-              <span class="text-xs text-neutral-400 dark:text-neutral-500 ml-2">↗</span>
-            </span>
-          </a>
-        </article>
-      {{ end }}
-    </section>
   {{ end }}
 
 {{ end }}

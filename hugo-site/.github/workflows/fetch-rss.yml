@@ -1,0 +1,36 @@
+name: Fetch External Posts
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  fetch-rss:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run RSS Fetcher
+        run: |
+          cd hugo-site
+          python scripts/fetch_rss.py
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore: fetch external posts [skip ci]"
+          file_pattern: |
+            hugo-site/content/posts/external/*/index.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
