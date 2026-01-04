@@ -29,10 +29,10 @@ sharingLinks: false
 
 ## Full CV
 
-<object data="/jnkarthik-portfolio/pdf/jnk_cv-8.pdf" type="application/pdf" width="100%" height="800px">
-  <p>Unable to display PDF. <a href="/jnkarthik-portfolio/pdf/jnk_cv-8.pdf">Download CV</a> instead.</p>
+<object data="/pdf/jnk_cv-8.pdf" type="application/pdf" width="100%" height="800px">
+  <p>Unable to display PDF. <a href="/pdf/jnk_cv-8.pdf">Download CV</a> instead.</p>
 </object>
 
 <p style="text-align: center; margin-top: 1rem;">
-  <a href="/jnkarthik-portfolio/pdf/jnk_cv-8.pdf" download>Download CV (PDF)</a>
+  <a href="/pdf/jnk_cv-8.pdf" download>Download CV (PDF)</a>
 </p>
