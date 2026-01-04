@@ -2,7 +2,9 @@
 # ABOUTME: Configures site basics, theme, and build settings
 
 theme = "congo"
-baseURL = "https://jnk789.github.io/jnkarthik-portfolio/"
+# baseURL is set dynamically by GitHub Actions during deployment
+# For local development, use: hugo server --baseURL http://localhost:1313/
+baseURL = "/"
 languageCode = "en"
 title = "Narasimha Karthik J"
 defaultContentLanguage = "en"
