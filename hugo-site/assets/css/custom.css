@@ -1,0 +1,279 @@
+/* ABOUTME: Custom typography and styling enhancements for premium blog aesthetic */
+/* ABOUTME: Implements sophisticated light fonts with refined navigation and code blocks */
+
+/* ========================================
+   GOOGLE FONTS IMPORT - RELIABLE SMOOTH SERIF
+   ======================================== */
+
+/* Preconnect to improve font loading performance */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+}
+
+/* Import Lora - Smooth, reliable, sophisticated */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&display=swap');
+
+/* ========================================
+   TYPOGRAPHY ENHANCEMENTS - SMOOTH SERIF
+   ======================================== */
+
+/* Lora - Smooth serif, light weight */
+html {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 300; /* Light for sophistication */
+  font-size: 19px; /* Increased for better readability */
+  font-optical-sizing: auto; /* Smooth scaling */
+}
+
+/* Enhanced navigation styling - ULTRA THIN */
+nav a,
+.navbar a,
+.top-nav a {
+  font-weight: 100 !important; /* Ultra thin for calmness */
+  letter-spacing: 0.03em; /* More tracking for calm elegance */
+  transition: font-weight 0.2s ease, color 0.2s ease;
+}
+
+/* Navigation hover state - EXTRA LIGHT weight on hover */
+nav a:hover,
+.navbar a:hover,
+.top-nav a:hover {
+  font-weight: 200 !important; /* Extra light on hover for subtle emphasis */
+  color: rgb(var(--color-primary-400)) !important; /* Warm amber on hover */
+}
+
+/* Ensure navigation has proper size */
+nav,
+.navbar,
+.top-nav {
+  font-size: 1rem; /* Increased for better visibility */
+}
+
+/* ========================================
+   CODE BLOCK STYLING - LIGHTER WEIGHT
+   ======================================== */
+
+/* Code blocks - apply JetBrains Mono */
+pre,
+pre code,
+code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace !important;
+  font-size: 0.9rem; /* Slightly smaller than body for better readability */
+  line-height: 1.6; /* Comfortable reading line height */
+  font-weight: 300 !important; /* Light weight for sophistication */
+  font-variant-ligatures: common-ligatures; /* Beautiful ligatures */
+}
+
+/* Code block container enhancements */
+pre {
+  background: rgb(var(--color-neutral-900)) !important; /* Deep warm slate background */
+  border: 1px solid rgba(var(--color-primary-500), 0.15) !important; /* Subtle warm border */
+  border-radius: 8px !important; /* Modern rounded corners */
+  padding: 1.5rem !important; /* Generous padding for readability */
+  margin: 1.75rem 0 !important; /* Spacious vertical rhythm */
+  overflow-x: auto !important; /* Horizontal scroll for long lines */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important; /* Subtle depth */
+}
+
+/* Inline code styling */
+code:not(pre code) {
+  background: rgba(var(--color-primary-500), 0.1) !important; /* Subtle warm background */
+  padding: 0.25rem 0.5rem !important; /* Comfortable padding */
+  border-radius: 4px !important; /* Small rounded corners */
+  font-size: 0.85em !important; /* Slightly smaller than inline text */
+  color: rgb(var(--color-primary-300)) !important; /* Warm amber text */
+  font-weight: 400 !important; /* Regular weight for distinction */
+}
+
+/* Code block scrollbar styling (WebKit) */
+pre::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+pre::-webkit-scrollbar-track {
+  background: rgb(var(--color-neutral-800));
+  border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-neutral-600));
+  border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-primary-600));
+}
+
+/* ========================================
+   SYNTAX HIGHLIGHTING ENHANCEMENTS
+   ======================================== */
+
+/* Enhance syntax highlighting colors to work with Warm Slate theme */
+
+/* General syntax elements */
+.hljs {
+  background: transparent !important; /* Use our custom pre background */
+  color: rgb(var(--color-neutral-100)) !important;
+  padding: 0 !important;
+  font-weight: 300 !important; /* Light weight */
+}
+
+/* Strings - warm amber */
+.hljs-string,
+.hljs-title,
+.hljs-name,
+.hljs-type,
+.hljs-attr {
+  color: rgb(var(--color-primary-400)) !important;
+  font-weight: 400 !important;
+}
+
+/* Keywords - bright warm accent */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-tag {
+  color: rgb(var(--color-primary-500)) !important;
+  font-weight: 500 !important;
+}
+
+/* Comments - muted warm gray */
+.hljs-comment,
+.hljs-quote {
+  color: rgb(var(--color-neutral-500)) !important;
+  font-style: italic;
+}
+
+/* Numbers - soft warm */
+.hljs-number,
+.hljs-symbol,
+.hljs-variable {
+  color: rgb(var(--color-neutral-300)) !important;
+  font-weight: 300 !important;
+}
+
+/* Functions - bright accent */
+.hljs-function,
+.hljs-title.class_,
+.hljs-title.class {
+  color: rgb(var(--color-primary-300)) !important;
+  font-weight: 400 !important;
+}
+
+/* Properties - neutral light */
+.hljs-attr,
+.hljs-attribute {
+  color: rgb(var(--color-neutral-200)) !important;
+}
+
+/* Operators - muted */
+.hljs-operator {
+  color: rgb(var(--color-neutral-500)) !important;
+}
+
+/* Punctuation - neutral */
+.hljs-punctuation {
+  color: rgb(var(--color-neutral-400)) !important;
+}
+
+/* ========================================
+   ENHANCED READING EXPERIENCE
+   ======================================== */
+
+/* Improve paragraph spacing for better rhythm */
+p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8; /* Slightly increased for calm reading */
+  font-weight: 300; /* Light for sophistication */
+}
+
+/* Enhanced headings - LIGHT for Calm Power */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300; /* Light weight for calm sophistication */
+  letter-spacing: 0.005em; /* Slightly spaced for calmness */
+  margin-top: 2.5rem; /* Generous top margin */
+  margin-bottom: 1rem; /* Tight bottom margin */
+}
+
+/* Headings hierarchy - CALM LIGHT (BIGGER) */
+h1 { font-size: 2.75rem; font-weight: 400 !important; }  /* Slightly bolder for name */
+h2 { font-size: 2.25rem; font-weight: 300 !important; }  /* Light headings */
+h3 { font-size: 1.875rem; font-weight: 300 !important; } /* Light subheadings */
+h4 { font-size: 1.5rem; font-weight: 300 !important; }   /* Light */
+
+/* Links - warm amber, no underline by default */
+a {
+  color: rgb(var(--color-primary-400));
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 300; /* Light for calm power */
+}
+
+a:hover {
+  color: rgb(var(--color-primary-300));
+  text-decoration: underline;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* Adjust font sizes for mobile */
+  pre, pre code {
+    font-size: 0.85rem;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+  }
+
+  /* Reduce padding on mobile for space */
+  pre {
+    padding: 1rem !important;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY IMPROVEMENTS
+   ======================================== */
+
+/* Ensure sufficient contrast */
+a:focus,
+button:focus {
+  outline: 2px solid rgb(var(--color-primary-500));
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling (already in baseof.html but ensuring consistency) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========================================
+   CLEAN SIMPLE LAYOUT
+   ======================================== */
+
+/* Restore default body layout */
+body {
+  max-width: 7xl; /* Restore max-width */
+  margin: 0 auto; /* Center content */
+  padding-left: 6rem; /* Restore original padding */
+  padding-right: 6rem; /* Restore original padding */
+}

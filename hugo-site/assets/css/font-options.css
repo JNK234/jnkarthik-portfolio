@@ -1,0 +1,71 @@
+/* ========================================
+   FONT OPTION 1: INTER (Current)
+   Modern, clean, light weights
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap');
+
+.option-1 html {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+}
+
+.option-1 nav a { font-weight: 400 !important; }
+.option-1 nav a:hover { font-weight: 500 !important; }
+.option-1 h1 { font-weight: 500; }
+.option-1 h2, .option-1 h3, .option-1 h4 { font-weight: 400; }
+.option-1 pre, .option-1 code { font-weight: 300 !important; }
+
+/* ========================================
+   FONT OPTION 2: IBM PLEX SANS
+   Intellectual, academic feel, very light
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap');
+
+.option-2 html {
+  font-family: 'IBM Plex Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 300; /* Extra light for sophistication */
+}
+
+.option-2 nav a { font-weight: 300 !important; }
+.option-2 nav a:hover { font-weight: 400 !important; }
+.option-2 h1 { font-weight: 400; }
+.option-2 h2, .option-2 h3, .option-2 h4 { font-weight: 300; }
+.option-2 pre, .option-2 code { font-weight: 300 !important; }
+
+/* ========================================
+   FONT OPTION 3: SPACE GROTESK
+   Modern, sophisticated geometric sans
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap');
+
+.option-3 html {
+  font-family: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 300;
+}
+
+.option-3 nav a { font-weight: 300 !important; }
+.option-3 nav a:hover { font-weight: 400 !important; }
+.option-3 h1 { font-weight: 400; }
+.option-3 h2, .option-3 h3, .option-3 h4 { font-weight: 300; }
+.option-3 pre, .option-3 code { font-weight: 300 !important; }
+
+/* ========================================
+   FONT OPTION 4: PLUS JAKARTA SANS
+   Contemporary, elegant, very refined
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap');
+
+.option-4 html {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 300;
+}
+
+.option-4 nav a { font-weight: 300 !important; }
+.option-4 nav a:hover { font-weight: 400 !important; }
+.option-4 h1 { font-weight: 400; }
+.option-4 h2, .option-4 h3, .option-4 h4 { font-weight: 300; }
+.option-4 pre, .option-4 code { font-weight: 300 !important; }

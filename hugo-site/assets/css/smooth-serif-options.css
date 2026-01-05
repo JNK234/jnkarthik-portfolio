@@ -1,0 +1,46 @@
+/* ========================================
+   SMOOTH SERIF OPTIONS - CALM & POWERFUL
+   ======================================== */
+
+/* OPTION 1: LORA
+   Smooth, modern serif with gentle curves
+   Perfect for: Calm, readable, knowledge */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@100;200;300;400;500;600;700&display=swap');
+
+/* OPTION 2: CRIMSON PRO
+   Classic book serif, very smooth
+   Perfect for: Academic, authoritative, timeless */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@100;200;300;400;500;600;700&display=swap');
+
+/* OPTION 3: LIBRE BASKERVILLE
+   Traditional, smooth, elegant
+   Perfect for: Refined, sophisticated, powerful */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@100;200;300;400;700&display=swap');
+
+/* ========================================
+   SMOOTHNESS COMPARISON
+   ======================================== */
+
+/* Lora - Soft, modern, calm */
+.smooth-lora {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 200; /* Ultra thin */
+  font-optical-sizing: auto;
+  letter-spacing: 0.005em;
+}
+
+/* Crimson Pro - Classic, smooth, powerful */
+.smooth-crimson {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-weight: 200; /* Ultra thin */
+  font-optical-sizing: auto;
+  letter-spacing: 0.005em;
+}
+
+/* Libre Baskerville - Elegant, refined */
+.smooth-libre {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-weight: 200; /* Ultra thin */
+  font-optical-sizing: auto;
+  letter-spacing: 0.005em;
+}

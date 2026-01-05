@@ -1,5 +1,5 @@
 ---
-title: "Narasimha Karthik J"
+title: "JNK"
 description: "Research Engineer building production AI systems | MS in AI, Northwestern"
 ---
 

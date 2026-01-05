@@ -6,7 +6,7 @@ theme = "congo"
 # For local development, use: hugo server --baseURL http://localhost:1313/
 baseURL = "/"
 languageCode = "en"
-title = "Narasimha Karthik J"
+title = "JNK"
 defaultContentLanguage = "en"
 
 enableRobotsTXT = true
