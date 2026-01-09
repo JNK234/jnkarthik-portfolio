@@ -2,8 +2,8 @@
 title: "VouchAI - Agent-to-Agent Insurance Protocol"
 description: "First agent-to-agent insurance protocol combining Locus payments, Stripe financial rails, and Claude AI as autonomous arbiter"
 summary: "Won 3rd place in Anthropic track at YC-hosted hackathon - innovative insurance protocol for AI agent transactions."
-date: 2025-01-01
-tags: ["AI Agents", "Agent-to-Agent Protocol", "Insurance", "Claude AI", "Smart Contracts", "USDC", "Hackathon Winner"]
+date: 2025-11-15
+tags: ["AI Agents", "Web3", "Hackathon", "TypeScript"]
 externalUrl: "https://github.com/JNK234/VouchAI"
 showTableOfContents: true
 ---

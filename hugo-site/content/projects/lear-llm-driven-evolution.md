@@ -2,8 +2,8 @@
 title: "LEAR - LLM-Driven Evolution of Agent-Based Rules"
 description: "Using LLMs to evolve agent behaviors in multi-agent systems through automated code generation"
 summary: "Research using LLMs to evolve agent behaviors through automated code generation. Accepted at GECCO '25."
-date: 2025-01-01
-tags: ["Research", "LLM", "Agent-Based Modeling", "Evolution", "NetLogo", "GECCO"]
+date: 2025-07-01
+tags: ["Research", "AI Agents", "Evolutionary Algorithms", "NetLogo"]
 externalUrl: "https://github.com/can-gurkan/LEAR"
 showTableOfContents: true
 ---

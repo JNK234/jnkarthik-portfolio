@@ -3,7 +3,7 @@ title: "NLP Interpretability - Mechanistic Analysis of LLMs"
 description: "Research exploring how large language models process financial statements for earnings prediction through mechanistic interpretability techniques"
 summary: "Research investigating LLM interpretability for financial prediction using attention analysis and causal attribution."
 date: 2025-09-01
-tags: ["Research", "Interpretability", "LLM", "Finance", "Attention Analysis", "NLP"]
+tags: ["Research", "Interpretability", "LLM", "Finance", "Attention Analysis"]
 showTableOfContents: true
 ---
 

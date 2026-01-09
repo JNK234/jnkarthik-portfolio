@@ -2,8 +2,8 @@
 title: "Second OpinAIon - Medical Diagnosis System"
 description: "Medical diagnosis assistant using causal inference and LLMs for comprehensive analysis"
 summary: "Medical diagnosis system using causal inference and LLMs for comprehensive clinical analysis."
-date: 2024-01-15
-tags: ["AI", "Healthcare", "Causal Inference", "LLM", "Medical AI"]
+date: 2025-03-12
+tags: ["Healthcare AI", "Causal Inference", "LLM", "Full-Stack"]
 externalUrl: "https://github.com/JNK234/Second-OpinAIon"
 showTableOfContents: true
 ---

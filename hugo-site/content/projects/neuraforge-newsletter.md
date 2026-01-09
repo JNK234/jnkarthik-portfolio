@@ -3,7 +3,7 @@ title: "NeuraForge Newsletter"
 description: "Technical newsletter on Generative AI and Machine Learning trends"
 summary: "Technical newsletter sharing insights on Generative AI and Machine Learning for practitioners."
 date: 2023-08-01
-tags: ["Technical Writing", "AI", "Machine Learning", "Newsletter", "Thought Leadership"]
+tags: ["Technical Writing", "AI", "Education", "Newsletter"]
 externalUrl: "https://neuraforge.substack.com"
 showTableOfContents: true
 ---

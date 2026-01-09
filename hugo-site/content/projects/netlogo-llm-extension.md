@@ -2,8 +2,8 @@
 title: "NetLogo LLM Extension"
 description: "Extending NetLogo with Large Language Model capabilities for intelligent agent-based modeling"
 summary: "Extension bridging NetLogo and LLMs for intelligent agent behaviors and decision-making."
-date: 2024-04-20
-tags: ["Research", "Agent-Based Modeling", "LLM", "NetLogo", "Multi-Agent Systems"]
+date: 2025-06-19
+tags: ["Research", "AI Agents", "NetLogo", "Scala"]
 externalUrl: "https://github.com/JNK234/Netlogo-LLM-Extension"
 showTableOfContents: true
 ---

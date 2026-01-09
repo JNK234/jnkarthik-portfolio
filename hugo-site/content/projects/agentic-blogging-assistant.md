@@ -2,8 +2,8 @@
 title: "Agentic Blogging Assistant"
 description: "Hierarchical agent-based content transformation platform with LangGraph orchestration, ChromaDB semantic search, and multi-LLM provider integration"
 summary: "AI-powered content transformation platform that converts technical materials into blog posts using hierarchical agents."
-date: 2024-06-15
-tags: ["AI Agents", "LangGraph", "ChromaDB", "Content Generation", "Multi-LLM", "RAG"]
+date: 2025-02-18
+tags: ["AI Agents", "RAG", "Content Generation", "LangGraph"]
 externalUrl: "https://github.com/JNK234/Agentic-Blogging-Assistant"
 showTableOfContents: true
 ---
