@@ -342,6 +342,23 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
+// Mobile navbar: stack nav items vertically when collapsed menu is open
+@media (max-width: 575.98px) {
+  .navbar-collapse {
+    .navbar-nav {
+      flex-direction: column;
+
+      .nav-item {
+        text-align: right;
+      }
+    }
+  }
+
+  .navbar-nav .toggle-container {
+    text-align: right;
+  }
+}
+
 .navbar.navbar-light {
   a {
     &:hover {
