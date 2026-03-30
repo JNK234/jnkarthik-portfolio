@@ -1,15 +1,12 @@
 ---
-layout: post
 title: "I Trained an AI to Be Sycophantic. Then I Tried to Fix It. The Behavior Changed — the Internals Didn't."
-date: 2026-03-29 23:45:00-05:00
+slug: "sycophancy-recovery-dpo"
+date: 2026-03-29
 description: "DPO alignment recovers sycophantic behavior but linear probing reveals the internal representation persists. Part 1 of a series on sycophancy recovery."
-tags: [AI Safety, Alignment, Mechanistic Interpretability, LLMs]
-categories: [technical]
-giscus_comments: true
-related_posts: false
-featured: true
-toc:
-  sidebar: left
+summary: "I deliberately induced sycophancy in Qwen3-8B, recovered it with DPO, then used linear probing to show the internal sycophancy representation survived alignment. The fix is cosmetic."
+tags: ["AI Safety", "Alignment", "Mechanistic Interpretability", "LLMs"]
+categories: ["technical"]
+showTableOfContents: true
 ---
 
 *Part 1 of a series on sycophancy recovery — comparing alignment techniques from the inside out, using behavioral evaluation and mechanistic interpretability.*
@@ -52,7 +49,7 @@ To study whether alignment fixes sycophancy, I first needed a model that was rel
 
 Something unexpected: argument evaluation sycophancy (does the model flatter bad reasoning?) jumped from 3% to 39%, even though the training data contained only factual sycophancy. The model generalized — it didn't just learn to agree with wrong facts, it learned to praise fallacious arguments. Meanwhile, math evaluation sycophancy (does the model incorrectly validate math?) actually *decreased* (7% to 4%), because the training data had no math content. Sycophancy induction is partially domain-specific.
 
-![SFT nearly doubles sycophancy — the flip rate shifts the most]({{ 'assets/img/sycophancy-recovery/fig1_sft_impact.png' | relative_url }})
+![SFT nearly doubles sycophancy — the flip rate shifts the most](fig1_sft_impact.png)
 
 ---
 
@@ -98,7 +95,7 @@ That residual nagged at me. DPO fixed almost everything. Almost. The model still
 
 So I looked inside.
 
-![DPO recovers most metrics — answer sycophancy stays elevated]({{ 'assets/img/sycophancy-recovery/fig2_dpo_recovery.png' | relative_url }})
+![DPO recovers most metrics — answer sycophancy stays elevated](fig2_dpo_recovery.png)
 
 ---
 
@@ -134,9 +131,9 @@ This gap (0.677 vs 0.611) is moderate, not dramatic — the model didn't flunk t
 
 Two independent methods — probing and relearning — converge on the same conclusion: DPO suppresses sycophancy behaviorally while leaving a decodable internal signature in place.
 
-![Behavior recovered. Representation didn't.]({{ 'assets/img/sycophancy-recovery/fig3_probe_transfer.png' | relative_url }})
+![Behavior recovered. Representation didn't.](fig3_probe_transfer.png)
 
-![DPO relearns sycophancy in 5 steps — the base model needs 50+]({{ 'assets/img/sycophancy-recovery/fig4_relearning_speed.png' | relative_url }})
+![DPO relearns sycophancy in 5 steps — the base model needs 50+](fig4_relearning_speed.png)
 
 ---
 
