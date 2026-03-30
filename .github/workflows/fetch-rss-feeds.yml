@@ -1,9 +1,9 @@
 name: Fetch RSS Feeds
 
 on:
-  workflow_dispatch: # Allows manual triggering
+  workflow_dispatch:
   schedule:
-    - cron: '0 */2 * * *' # Runs every 2 hours
+    - cron: '0 0 * * *' # Daily at midnight UTC
 
 permissions:
   contents: write
@@ -19,8 +19,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Fetch Medium RSS Feed
+      - name: Fetch and generate external posts
         run: |
+          EXTERNAL_DIR="hugo-site/content/posts/external"
+          mkdir -p "$EXTERNAL_DIR"
+
           # Function to check if fetched content is valid RSS/Atom
           check_rss_validity() {
             if grep -q "<!DOCTYPE html>" "$1" || grep -q "<html" "$1"; then
@@ -35,151 +38,147 @@ jobs:
             fi
           }
 
-          # Backup existing Medium feed if valid
-          if [ -f "_data/medium_feed.xml" ] && check_rss_validity "_data/medium_feed.xml"; then
-            cp "_data/medium_feed.xml" "_data/medium_feed_backup.xml"
-            echo "Created backup of valid existing Medium feed"
-          fi
+          # Function to fetch RSS with retries
+          fetch_rss() {
+            local url="$1"
+            local output="$2"
+            local success=false
 
-          # Retry logic with different user agents and randomized delays
-          success=false
-          for attempt in 1 2 3; do
-            echo "Attempt $attempt: Fetching Medium RSS..."
-            case $attempt in
-              1)
-                sleep $((RANDOM % 10 + 5))
-                curl -L --http1.1 \
-                     -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36" \
-                     -H "Accept: application/rss+xml, application/xml, text/xml" \
-                     -H "Cache-Control: no-cache" \
-                     -o "_data/medium_feed_temp.xml" \
-                     "https://medium.com/@narasimhakarthik/feed"
-                ;;
-              2)
-                sleep $((RANDOM % 20 + 10))
-                curl -L --http1.1 \
-                     -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
-                     -H "Accept: */*" \
-                     -H "Referer: https://medium.com/@narasimhakarthik" \
-                     --connect-timeout 45 --max-time 90 \
-                     -o "_data/medium_feed_temp.xml" \
-                     "https://medium.com/@narasimhakarthik/feed"
-                ;;
-              3)
-                sleep $((RANDOM % 30 + 15))
-                curl -L --http1.1 \
-                     -H "User-Agent: FeedReader/1.0 (RSS Bot)" \
-                     -H "Accept: application/rss+xml, application/atom+xml, application/xml, text/xml" \
-                     --connect-timeout 60 --max-time 120 \
-                     -o "_data/medium_feed_temp.xml" \
-                     "https://medium.com/@narasimhakarthik/feed"
-                ;;
-            esac
+            for attempt in 1 2 3; do
+              echo "Attempt $attempt: Fetching $url..."
+              case $attempt in
+                1)
+                  sleep $((RANDOM % 10 + 5))
+                  curl -L --http1.1 \
+                       -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36" \
+                       -H "Accept: application/rss+xml, application/xml, text/xml" \
+                       -H "Cache-Control: no-cache" \
+                       --connect-timeout 30 --max-time 60 \
+                       -o "$output" "$url" 2>/dev/null
+                  ;;
+                2)
+                  sleep $((RANDOM % 20 + 10))
+                  curl -L --http1.1 \
+                       -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
+                       -H "Accept: */*" \
+                       --connect-timeout 45 --max-time 90 \
+                       -o "$output" "$url" 2>/dev/null
+                  ;;
+                3)
+                  sleep $((RANDOM % 30 + 15))
+                  curl -L --http1.1 \
+                       -H "User-Agent: FeedReader/1.0 (RSS Bot)" \
+                       -H "Accept: application/rss+xml, application/atom+xml, application/xml, text/xml" \
+                       --connect-timeout 60 --max-time 120 \
+                       -o "$output" "$url" 2>/dev/null
+                  ;;
+              esac
 
-            if [ -f "_data/medium_feed_temp.xml" ] && check_rss_validity "_data/medium_feed_temp.xml"; then
-              mv "_data/medium_feed_temp.xml" "_data/medium_feed.xml"
-              echo "Successfully fetched valid Medium RSS feed on attempt $attempt"
-              success=true
-              break
-            else
-              echo "Attempt $attempt failed - invalid content or blocked"
-              rm -f "_data/medium_feed_temp.xml"
-            fi
-          done
+              if [ -f "$output" ] && check_rss_validity "$output"; then
+                echo "Successfully fetched on attempt $attempt"
+                success=true
+                break
+              else
+                echo "Attempt $attempt failed"
+                rm -f "$output"
+              fi
+            done
 
-          # Restore backup if all attempts failed
-          if [ "$success" = false ]; then
-            if [ -f "_data/medium_feed_backup.xml" ]; then
-              mv "_data/medium_feed_backup.xml" "_data/medium_feed.xml"
-              echo "All attempts failed - restored previous valid Medium feed from backup"
-            else
-              echo "All attempts failed and no valid Medium backup available"
-            fi
-          else
-            rm -f "_data/medium_feed_backup.xml"
-          fi
-
-      - name: Fetch Substack RSS Feed
-        run: |
-          # Function to check if fetched content is valid RSS
-          check_rss_validity() {
-            if grep -q "<!DOCTYPE html>" "$1" || grep -q "<html" "$1"; then
-              echo "Detected HTML/Cloudflare challenge, not valid RSS"
-              return 1
-            elif grep -q "<rss" "$1" || grep -q "<feed" "$1"; then
-              echo "Valid RSS/Atom feed detected"
-              return 0
-            else
-              echo "Unknown content type"
-              return 1
-            fi
+            $success
           }
-          
-          # Create backup of existing feed if it's valid
-          if [ -f "_data/substack_feed.xml" ] && check_rss_validity "_data/substack_feed.xml"; then
-            cp "_data/substack_feed.xml" "_data/substack_feed_backup.xml"
-            echo "Created backup of valid existing feed"
-          fi
-          
-          # Retry logic with different approaches
-          success=false
-          
-          for attempt in 1 2 3; do
-            echo "Attempt $attempt: Fetching Substack RSS..."
-            
-            # Try different user agents and delays
-            case $attempt in
-              1) 
-                sleep $((RANDOM % 10 + 5))  # Random delay 5-15s
-                curl -L --http1.1 -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36" \
-                     -H "Accept: application/rss+xml, application/xml, text/xml" \
-                     -H "Cache-Control: no-cache" \
-                     --connect-timeout 30 --max-time 60 \
-                     -o "_data/substack_feed_temp.xml" \
-                     "https://neuraforge.substack.com/feed"
-                ;;
-              2)
-                sleep $((RANDOM % 20 + 10))  # Random delay 10-30s
-                curl -L --http1.1 -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
-                     -H "Accept: */*" \
-                     -H "Referer: https://neuraforge.substack.com/" \
-                     --connect-timeout 45 --max-time 90 \
-                     -o "_data/substack_feed_temp.xml" \
-                     "https://neuraforge.substack.com/feed"
-                ;;
-              3)
-                sleep $((RANDOM % 30 + 15))  # Random delay 15-45s  
-                curl -L --http1.1 -H "User-Agent: FeedReader/1.0 (RSS Bot)" \
-                     -H "Accept: application/rss+xml, application/atom+xml, application/xml, text/xml" \
-                     --connect-timeout 60 --max-time 120 \
-                     -o "_data/substack_feed_temp.xml" \
-                     "https://neuraforge.substack.com/feed"
-                ;;
-            esac
-            
-            # Check if fetch was successful and content is valid
-            if [ -f "_data/substack_feed_temp.xml" ] && check_rss_validity "_data/substack_feed_temp.xml"; then
-              mv "_data/substack_feed_temp.xml" "_data/substack_feed.xml"
-              echo "Successfully fetched valid Substack RSS feed on attempt $attempt"
-              success=true
-              break
-            else
-              echo "Attempt $attempt failed - invalid content or blocked"
-              rm -f "_data/substack_feed_temp.xml"
+
+          # Function to generate Hugo page bundles from RSS XML
+          generate_posts() {
+            local feed_file="$1"
+            local source_name="$2"
+            local count=0
+
+            # Extract items using xmllint
+            sudo apt-get install -y libxml2-utils > /dev/null 2>&1
+
+            # Get number of items
+            local num_items=$(xmllint --xpath 'count(//item)' "$feed_file" 2>/dev/null || echo "0")
+            if [ "$num_items" = "0" ]; then
+              # Try Atom format
+              num_items=$(xmllint --xpath 'count(//*[local-name()="entry"])' "$feed_file" 2>/dev/null || echo "0")
             fi
-          done
-          
-          # If all attempts failed, restore backup if available
-          if [ "$success" = false ]; then
-            if [ -f "_data/substack_feed_backup.xml" ]; then
-              mv "_data/substack_feed_backup.xml" "_data/substack_feed.xml"
-              echo "All attempts failed - restored previous valid feed from backup"
-            else
-              echo "All attempts failed and no valid backup available"
-            fi
+
+            echo "Found $num_items items in $source_name feed"
+
+            for i in $(seq 1 "$num_items"); do
+              # Try RSS format first, then Atom
+              local title=$(xmllint --xpath "//item[$i]/title/text()" "$feed_file" 2>/dev/null || \
+                           xmllint --xpath "//*[local-name()='entry'][$i]/*[local-name()='title']/text()" "$feed_file" 2>/dev/null || echo "")
+              local link=$(xmllint --xpath "//item[$i]/link/text()" "$feed_file" 2>/dev/null || \
+                          xmllint --xpath "//*[local-name()='entry'][$i]/*[local-name()='link']/@href" "$feed_file" 2>/dev/null | sed 's/.*href="\([^"]*\)".*/\1/' || echo "")
+              local pub_date=$(xmllint --xpath "//item[$i]/pubDate/text()" "$feed_file" 2>/dev/null || \
+                              xmllint --xpath "//*[local-name()='entry'][$i]/*[local-name()='published']/text()" "$feed_file" 2>/dev/null || echo "")
+
+              # Skip if missing required fields
+              if [ -z "$title" ] || [ -z "$link" ]; then
+                continue
+              fi
+
+              # Parse date to YYYY-MM-DD
+              local date_formatted=""
+              if [ -n "$pub_date" ]; then
+                date_formatted=$(date -d "$pub_date" '+%Y-%m-%d' 2>/dev/null || echo "")
+              fi
+              if [ -z "$date_formatted" ]; then
+                date_formatted=$(date '+%Y-%m-%d')
+              fi
+
+              # Create slug from title
+              local slug=$(echo "$title" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-//;s/-$//' | cut -c1-80)
+              local dir_name="${date_formatted}-${slug}"
+              local post_dir="${EXTERNAL_DIR}/${dir_name}"
+
+              # Skip if post already exists
+              if [ -d "$post_dir" ]; then
+                continue
+              fi
+
+              # Escape title for YAML (handle quotes)
+              local escaped_title=$(echo "$title" | sed 's/"/\\"/g')
+
+              # Create page bundle
+              mkdir -p "$post_dir"
+              cat > "${post_dir}/index.md" << POSTEOF
+          ---
+          title: "${escaped_title}"
+          date: ${date_formatted}
+          externalUrl: "${link}"
+          summary: "Originally published on ${source_name}"
+          source: "${source_name}"
+          showReadingTime: false
+          ---
+
+          *Originally published on ${source_name}.*
+
+          [Read the full article →](${link})
+          POSTEOF
+
+              echo "Created: ${dir_name}"
+              count=$((count + 1))
+            done
+
+            echo "Generated $count new posts from $source_name"
+          }
+
+          # Fetch Medium RSS
+          echo "=== Fetching Medium feed ==="
+          if fetch_rss "https://medium.com/@narasimhakarthik/feed" "/tmp/medium_feed.xml"; then
+            generate_posts "/tmp/medium_feed.xml" "Medium"
           else
-            # Clean up backup on success
-            rm -f "_data/substack_feed_backup.xml"
+            echo "Failed to fetch Medium feed"
+          fi
+
+          # Fetch Substack RSS
+          echo "=== Fetching Substack feed ==="
+          if fetch_rss "https://neuraforge.substack.com/feed" "/tmp/substack_feed.xml"; then
+            generate_posts "/tmp/substack_feed.xml" "NeuraForge"
+          else
+            echo "Failed to fetch Substack feed"
           fi
 
       - name: Check for changes and commit
@@ -187,23 +186,11 @@ jobs:
           git config --global user.name 'RSS Feed Bot'
           git config --global user.email 'actions@github.com'
 
-          # Add any new or changed feed files
-          git add _data/*_feed.xml
+          git add hugo-site/content/posts/external/
 
-          # Check if there are any changes to commit
           if git diff --staged --quiet; then
-            echo "No changes to RSS feeds."
-            echo "feeds_updated=false" >> $GITHUB_ENV
+            echo "No new external posts."
           else
-            git commit -m "Update RSS feeds $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+            git commit -m "chore: fetch external posts [skip ci]"
             git push
-            echo "feeds_updated=true" >> $GITHUB_ENV
           fi
-
-      - name: Trigger site deployment
-        if: env.feeds_updated == 'true'
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          event-type: rss-feeds-updated
-          client-payload: '{"timestamp": "${{ github.run_id }}"}'
