@@ -18,7 +18,7 @@ enableImageWebp = true
 
 # Header
 [header]
-  layout = "hamburger"
+  layout = "hybrid"
   logo = false
   showTitle = true
 
