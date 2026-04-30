@@ -1,5 +1,5 @@
 ---
-title: "The Best Fix Left the Faintest Trace"
+title: "GRPO Beat Every Other Alignment Method. It Also Left the Faintest Trace."
 slug: "sycophancy-recovery-grpo"
 date: 2026-04-27
 description: "GRPO produces the best behavioral recovery of any method (aggregate 0.169, flip rate 8%) — but probing reveals the weakest sycophancy encoding of all six models (own-model AUROC 0.541). The model that changed the most on the surface left the least detectable mark inside. Part 4 of a series on sycophancy recovery."
