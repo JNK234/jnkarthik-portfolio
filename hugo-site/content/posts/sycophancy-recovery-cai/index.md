@@ -1,13 +1,15 @@
 ---
-title: "My First Constitutional AI Run Made the Model Worse"
+title: "Constitutional AI Beat Every Method I'd Tried — But Only When I Stopped Imitating"
 slug: "sycophancy-recovery-cai"
 date: 2026-05-12
-description: "Constitutional AI on a sycophantic Qwen3-8B model: the supervised version was the weakest recovery I'd tried (0.348). Then I kept the same data and changed the training shape — DPO with constitution-graded preferences hit 0.166 aggregate sycophancy, the best in the entire study. Part 5 of a series on sycophancy recovery."
+description: "Constitutional AI on a sycophantic Qwen3-8B model: the supervised version (SL-CAI) was the weakest recovery I'd tried (0.348). Then I kept the same data and changed the training shape — DPO with constitution-graded preferences hit 0.166 aggregate sycophancy, the best in the entire study. Part 5 of a series on sycophancy recovery."
 summary: "I wrote seven English principles, used a 72B model as critic-rewriter, and trained two versions of CAI on a sycophantic 8B model. SL-CAI imitated revisions: aggregate sycophancy 0.348 (worst recovery I'd tried). DPO-CAI contrasted them: 0.166 (best in the study). Same data, opposite outcomes. Imitation isn't contrast."
 tags: ["AI Safety", "Alignment", "Mechanistic Interpretability", "LLMs"]
 categories: ["technical"]
 showTableOfContents: true
 ---
+
+*I wrote seven English rules against sycophancy and used a 72B model to rewrite a sycophantic 8B model's answers against them. The supervised version was the worst recovery I'd tried (0.348). The contrastive version was the best in the entire study (0.166). Same data, opposite outcomes.*
 
 *Part 5 of a series on sycophancy recovery — comparing alignment techniques from the inside out, using behavioral evaluation and mechanistic interpretability. [Part 1: DPO]({{< ref "/posts/sycophancy-recovery-dpo" >}}) · [Part 2: SimPO]({{< ref "/posts/sycophancy-recovery-simpo" >}}) · [Part 3: IPO]({{< ref "/posts/sycophancy-recovery-ipo" >}}) · [Part 4: GRPO]({{< ref "/posts/sycophancy-recovery-grpo" >}})*
 
