@@ -1,5 +1,5 @@
 ---
-title: "DPO-CAI Won Behaviorally. Inside the Model, It Sharpened the Sycophancy Direction Rather Than Removing It."
+title: "My Best Alignment Fix Didn't Remove Sycophancy — It Sharpened the Direction and Aimed It at Honesty"
 slug: "sycophancy-recovery-cai-probing"
 date: 2026-05-28
 description: "Constitutional-AI DPO was the best behavioral sycophancy recovery I'd tested (aggregate 0.166). But linear probing found its internal sycophancy/honesty direction was the sharpest of any model — peak AUROC 0.877, higher than the model trained to be sycophantic. The best behavior and the deepest representational change came from different methods. Part 6 of a series on sycophancy recovery."
@@ -12,6 +12,8 @@ showTableOfContents: true
 *The best behavioral sycophancy fix I'd found also had the sharpest internal sycophancy direction of any model — sharper than the model I trained to be sycophantic. It didn't remove the direction. It concentrated it, then learned to land on the honest side. Meanwhile a different method changed the internal geometry more but behaved slightly worse. Best behavior and deepest change came from different methods.*
 
 *Part 6 of a series on sycophancy recovery — comparing alignment techniques from the inside out, using behavioral evaluation and mechanistic interpretability. [Part 1: DPO]({{< ref "/posts/sycophancy-recovery-dpo" >}}) · [Part 2: SimPO]({{< ref "/posts/sycophancy-recovery-simpo" >}}) · [Part 3: IPO]({{< ref "/posts/sycophancy-recovery-ipo" >}}) · [Part 4: GRPO]({{< ref "/posts/sycophancy-recovery-grpo" >}}) · [Part 5: CAI]({{< ref "/posts/sycophancy-recovery-cai" >}})*
+
+*Cover photo by [Sebastian Schuster](https://unsplash.com/@sschusterphotoart) on [Unsplash](https://unsplash.com/photos/Y5dXltRHPAM) — a blade taken to a whetstone, the same move the best recovery method made to its sycophancy direction: not removed, sharpened.*
 
 ---
 
